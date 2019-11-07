@@ -609,8 +609,8 @@ class RequestCore
 		curl_setopt($curl_handle, CURLOPT_READFUNCTION, array($this, 'streaming_read_callback'));
 
 		// Verify security of the connection
-		curl_setopt($curl_handle, CURLOPT_SSL_VERIFYPEER, true);
-		curl_setopt($curl_handle, CURLOPT_SSL_VERIFYHOST, true);
+		curl_setopt($curl_handle, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($curl_handle, CURLOPT_SSL_VERIFYHOST, 2);
 		curl_setopt($curl_handle, CURLOPT_CAINFO, dirname(__FILE__) . '/cacert.pem'); // chmod the file as 0755
 
 		// Debug mode
